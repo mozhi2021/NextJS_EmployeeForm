@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PageHeader from "../../components/PageHeader";
-// import * as employeeService from "../../Services/employeeService";
 import * as employeeService from "../../components/Services/employeeService";
 import EmployeeForm from "./EmployeeForm";
 import { makeStyles } from "@mui/styles";
@@ -29,15 +28,15 @@ import ConfirmDialog from "../../components/controls/ConfirmDialog";
 const theme = createTheme();
 const useStyles = makeStyles({
   pageContent: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(3),
     padding: theme.spacing(5),
   },
   searchInput: {
-    width: "75%",
+    width: "55%",
   },
   newButton: {
     position: "absolute",
-    left: "200px",
+    left: "800px",
   },
 });
 
@@ -46,8 +45,8 @@ const headCells = [
   { id: "email", label: "Email Address" },
   { id: "phoneNumber", label: "Phone Number" },
   { id: "department", label: "Department", disableSorting: true },
-  { id: "isPermanent", label: "Permanent", disableSorting: true },
-  { id: "actions", label: "Actions", disableSorting: true },
+  // { id: "isPermanent", label: "Permanent", disableSorting: true },
+  // { id: "actions", label: "Actions", disableSorting: true },
 ];
 
 export default function Employees() {
@@ -128,14 +127,16 @@ export default function Employees() {
   return (
     <>
       <PageHeader
-        title="Employee"
-        subTitle="Form design with validation"
+        title="Student Register"
+        // subTitle="Form design with validation"
         icon={<PeopleOutlineIcon fontSize="large" />}
       />
       <Paper className={classes.pageContent}>
         <Toolbar>
           <Controls.Input
-            label="Search Employees by Full Name"
+            // label="Search Employees by Full Name"
+            label="Search Students by Full Name"
+
             className={classes.searchInput}
             InputProps={{
               startAdornment: (
@@ -147,7 +148,9 @@ export default function Employees() {
             onChange={handleSearch}
           />
           <Controls.Button
-            text="Add New"
+            // text="Add New"
+            text="New Form"
+
             variant="outlined"
             startIcon={<AddIcon />}
             className={classes.newButton}
