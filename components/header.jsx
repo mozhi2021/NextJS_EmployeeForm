@@ -34,6 +34,9 @@ export default function Header() {
   const redirecttohome = () => {
     router.push("/");
   };
+  const redirecttofeesdetails = () => {
+    router.push("/feesdetails");
+  };
 
   return (
     <AppBar position="static">
@@ -54,9 +57,20 @@ export default function Header() {
               onClick={redirecttocontact}
               startIcon={<ContactMailRoundedIcon />}
             >
-              Contact Us
+              Hostelers Form
             </Button>
           </Grid>
+
+          <Grid>
+            <Button
+              variant="contained"
+              onClick={redirecttofeesdetails}
+              startIcon={<ContactMailRoundedIcon />}
+            >
+              Fees Details
+            </Button>
+          </Grid>
+
           <Grid item sm></Grid>
           <Grid item>
             <IconButton style={{ color: "white" }}>

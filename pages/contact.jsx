@@ -68,7 +68,7 @@ export default function Contact() {
   return (
     <>
       <PageHeader
-        title="Contact Us"
+        title="Hostelers"
         icon={<ContactMailRoundedIcon fontSize="large" />}
       />
       <Paper className={classes.pageContent}>
@@ -76,29 +76,29 @@ export default function Contact() {
           <Grid container>
             <Grid item xs={12}>
               <Controls.Phone
-                label="Phone Number"
-                name="phoneNumber"
+                label="Student Name"
+                name="studentname"
                 value={values.phoneNumber}
                 onChange={handleInputChange}
                 error={errors.phoneNumber}
               />
               <Controls.Input
-                label="Email"
-                name="email"
+                label="Standard"
+                name="std"
                 value={values.email}
                 onChange={handleInputChange}
                 error={errors.email}
               />
               <Controls.Input
-                label="Subject"
-                name="subject"
+                label="Parents Name"
+                name="parentsname"
                 value={values.subject}
                 onChange={handleInputChange}
                 error={errors.subject}
               />
               <Controls.Textarea
-                label="Message"
-                name="message"
+                label="Address"
+                name="address"
                 value={values.message}
                 onChange={handleInputChange}
               />

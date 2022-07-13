@@ -2,21 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Form, useForm } from "../../components/useForm";
 import Controls from "../../components/controls/Controls";
 import { Grid } from "@mui/material";
-// import * as employeeService from '../../Services/employeeService';
 import * as employeeService from "../../components/Services/employeeService";
 import Stack from "@mui/material/Stack";
 import Progress from "../../components/Progress";
 
-const genderItems = [
-  { id: "male", title: "Male" },
-  { id: "female", title: "Female" },
-  { id: "other", title: "Other" },
-];
 const religionItems = [
-  { id: "Hindu", title: "Hindu" },
-  { id: "Muslim", title: "Muslim" },
-  { id: "Christian", title: "Christian" },
-  { id: "Sikh", title: "Sikh" },
+  { id: "hindu", title: "Hindu" },
+  { id: "muslim", title: "Muslim" },
+  { id: "christian", title: "Christian" },
+  { id: "sikh", title: "Sikh" },
 ];
 
 const initialFValues = {
@@ -24,7 +18,7 @@ const initialFValues = {
   fullName: "",
   email: "",
   phoneNumber: "",
-  gender: "",
+  religion: "",
   city: "",
   departmentId: "",
   dateofjoining: new Date(),
@@ -58,7 +52,7 @@ export default function EmployeeForm(props) {
     if ("departmentId" in fieldValues)
       temp.departmentId = fieldValues.departmentId ? "" : "Required";
     if ("gender" in fieldValues)
-      temp.gender = fieldValues.gender ? "" : "Required";
+      temp.gender = fieldValues.religion ? "" : "Required";
     if ("dateofjoining" in fieldValues)
       temp.dateofjoining = fieldValues.dateofjoining ? "" : "Required";
     setErrors({
@@ -106,12 +100,12 @@ export default function EmployeeForm(props) {
             error={errors.email}
           />
           <Controls.RadioGroup
-            label="Gender"
-            name="gender"
-            value={values.gender}
+            label="Religion"
+            name="religionItems"
+            value={values.religion}
             onChange={handleInputChange}
             items={religionItems}
-            error={errors.gender}
+            error={errors.religion}
           />
           <Controls.Select
             label="Department"
@@ -120,12 +114,6 @@ export default function EmployeeForm(props) {
             onChange={handleInputChange}
             options={employeeService.getDepartmentCollection()}
             error={errors.departmentId}
-          />
-          <Controls.Checkbox
-            label="Permanent Employee"
-            name="isPermanent"
-            value={values.isPermanent}
-            onChange={handleInputChange}
           />
         </Grid>
         <Grid item xs={12} md={6}>

@@ -28,7 +28,7 @@ import ConfirmDialog from "../../components/controls/ConfirmDialog";
 const theme = createTheme();
 const useStyles = makeStyles({
   pageContent: {
-    margin: theme.spacing(3),
+    margin: theme.spacing(4),
     padding: theme.spacing(5),
   },
   searchInput: {
@@ -42,11 +42,9 @@ const useStyles = makeStyles({
 
 const headCells = [
   { id: "fullName", label: "Full Name" },
-  { id: "email", label: "Email Address" },
+  { id: "address", label: "Address" },
   { id: "phoneNumber", label: "Phone Number" },
   { id: "department", label: "Department", disableSorting: true },
-  // { id: "isPermanent", label: "Permanent", disableSorting: true },
-  // { id: "actions", label: "Actions", disableSorting: true },
 ];
 
 export default function Employees() {
@@ -127,8 +125,9 @@ export default function Employees() {
   return (
     <>
       <PageHeader
-        title="Student Register"
+        title="Student Registeration Form"
         // subTitle="Form design with validation"
+        subTitle="For Higher Secondary"
         icon={<PeopleOutlineIcon fontSize="large" />}
       />
       <Paper className={classes.pageContent}>
@@ -136,7 +135,6 @@ export default function Employees() {
           <Controls.Input
             // label="Search Employees by Full Name"
             label="Search Students by Full Name"
-
             className={classes.searchInput}
             InputProps={{
               startAdornment: (
@@ -150,7 +148,6 @@ export default function Employees() {
           <Controls.Button
             // text="Add New"
             text="New Form"
-
             variant="outlined"
             startIcon={<AddIcon />}
             className={classes.newButton}

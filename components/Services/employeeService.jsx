@@ -3,10 +3,10 @@ const KEYS = {
   employeeId: "employeeId",
 };
 export const getDepartmentCollection = () => [
-  { id: "1", title: "Development" },
-  { id: "2", title: "Marketing" },
-  { id: "3", title: "Accounting" },
-  { id: "4", title: "HR" },
+  { id: "1", title: "Maths, Biology" },
+  { id: "2", title: "Maths, Computer" },
+  { id: "3", title: "Biology" },
+  { id: "4", title: "Accountancy" },
 ];
 export function insertEmployee(data) {
   let employees = getAllEmployees();
@@ -28,6 +28,8 @@ export function deleteEmployee(id) {
 
 export function generateEmployeeId() {
   if (localStorage.getItem(KEYS.employeeId) == null)
+    // if (localStorage.getItem(KEYS.employeeId) == TODO)
+    // if (localStorage.getItem(employeeId))
     localStorage.setItem(KEYS.employeeId, "0");
   var id = parseInt(localStorage.getItem(KEYS.employeeId));
   localStorage.setItem(KEYS.employeeId, (++id).toString());
@@ -35,6 +37,8 @@ export function generateEmployeeId() {
 }
 export function getAllEmployees() {
   if (localStorage.getItem(KEYS.employees) == null)
+    // if (localStorage.getItem(KEYS.employees) == TODO)
+    // if (localStorage.getItem(employees))
     localStorage.setItem(KEYS.employees, JSON.stringify([]));
   let employees = JSON.parse(localStorage.getItem(KEYS.employees));
   let departments = getDepartmentCollection();
