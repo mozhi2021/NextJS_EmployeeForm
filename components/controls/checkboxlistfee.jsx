@@ -60,19 +60,7 @@ export default function Checkboxlistfee(props) {
               }
             />
           }
-          label="Spanish"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              name="german"
-              checked={values.german}
-              onChange={(e) =>
-                onChange(convertToDefEventPara("german", e.target.checked))
-              }
-            />
-          }
-          label="German"
+          label="Term III"
         />
       </FormGroup>
       {error && <FormHelperText>{error}</FormHelperText>}

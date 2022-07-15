@@ -8,9 +8,6 @@ import theme from "../styles/theme";
 import "/styles/globals.css";
 import Header from "../components/header";
 import Router, { useRouter as UseRouter } from "next/router";
-// import Contact from "../pages/contact";
-// import EmployeeForm from "./Employees/EmployeeForm";
-// import Employees from "./Employees/employees";
 
 
 const clientSideEmotionCache = createEmotionCache();

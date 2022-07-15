@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@mui/styles";
 import PageHeader from "../components/PageHeader";
 import { Form, useForm } from "../components/useForm";
 import { createTheme, Paper, Grid, Stack } from "@mui/material";
 import Controls from "../components/controls/Controls";
 import Header from "../components/header";
-// import * as employeeService from "../../components/Services/employeeService";
+import * as studentService from "../components/Services/studentService";
 import employeeService from "../components/Services/employeeService";
-import ContactMailRoundedIcon from "@mui/icons-material/ContactMailRounded";
 import TextField from "@mui/material";
 import MenuItem from "@mui/material";
+import DetailsIcon from "@mui/icons-material/Details";
 
 const theme = createTheme();
 const useStyles = makeStyles({
   pageContent: {
     margin: theme.spacing(15),
     padding: theme.spacing(8),
+    backgroundColor: "skyblue",
   },
 });
 const hostelfeeItems = [
@@ -35,10 +36,13 @@ const initialFValues = {
   termI: "",
   termII: "",
   termIII: "",
+  departmentId: "",
 };
 
+export default function Feesdetails(props) {
+  const { addOrEdit, recordForEdit } = props;
+  const [openProgress, setOpenProgress] = useState(false);
 
-export default function Feesdetails() {
   const validate = (fieldValues = values) => {
     let temp = { ...errors };
 
@@ -58,6 +62,8 @@ export default function Feesdetails() {
     }
     if ("subject" in fieldValues)
       temp.subject = fieldValues.subject ? "" : "Required.";
+    if ("departmentId" in fieldValues)
+      temp.departmentId = fieldValues.departmentId ? "" : "Required";
 
     if ("isAgreed" in fieldValues)
       temp.isAgreed = fieldValues.isAgreed == true ? "" : "Required";
@@ -77,13 +83,24 @@ export default function Feesdetails() {
       resetForm();
     }
   };
+  useEffect(() => {
+    if (recordForEdit != null)
+      setValues({
+        ...recordForEdit,
+      });
+  }, [recordForEdit]);
 
   const classes = useStyles();
 
   return (
     <>
-      <PageHeader title="Fees Details" />
-      <Paper className={classes.pageContent}>
+      <PageHeader
+        title="Fees Details"
+        icon={<DetailsIcon fontSize="large" />}
+      />
+
+      <Paper className={classes.pageContent} >
+        {/* <Paper className="papersize"> */}
         <Form onSubmit={handleSubmit}>
           <Grid container>
             <Grid item xs={12}>
@@ -94,22 +111,15 @@ export default function Feesdetails() {
                 onChange={handleInputChange}
                 error={errors.name}
               />
-              {/* <Controls.Select
-                label="Department"
+              <Controls.Select
+                label="Class"
                 name="departmentId"
                 value={values.departmentId}
                 onChange={handleInputChange}
-                options={employeeService.getDepartmentCollection()}
+                options={studentService.getClassCollection()}
                 error={errors.departmentId}
-              /> */}
-
-              <Controls.Input
-                label="Class"
-                name="class"
-                value={values.class}
-                onChange={handleInputChange}
-                error={errors.class}
               />
+
               <Controls.Input
                 label="Roll No:"
                 name="rollno"
@@ -129,32 +139,6 @@ export default function Feesdetails() {
               <Controls.Checkboxlistfee
                 values={values}
                 onChange={handleInputChange}
-              />
-              <Controls.Checkboxlist
-                values={values}
-                onChange={handleInputChange}
-              />
-
-              <Controls.Input
-                label="School Fee"
-                name="schoolfee"
-                value={values.schoolfee}
-                onChange={handleInputChange}
-                error={errors.schoolfee}
-              />
-              <Controls.Input
-                label="Bus Fee:"
-                name="busfee"
-                value={values.busfee}
-                onChange={handleInputChange}
-                error={errors.busfee}
-              />
-              <Controls.Input
-                label="Hostel Fee: Monthly Yearly"
-                name="hostelfee"
-                value={values.hostelfee}
-                onChange={handleInputChange}
-                error={errors.hostelfee}
               />
             </Grid>
             <Grid container sx={{ justifyContent: "center" }}>

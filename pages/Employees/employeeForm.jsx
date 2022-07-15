@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, useForm } from "../../components/useForm";
 import Controls from "../../components/controls/Controls";
 import { Grid } from "@mui/material";
-import * as employeeService from "../../components/Services/employeeService";
+import employeeService from "../../components/Services/employeeService";
 import Stack from "@mui/material/Stack";
 import Progress from "../../components/Progress";
 
@@ -107,14 +107,14 @@ export default function EmployeeForm(props) {
             items={religionItems}
             error={errors.religion}
           />
-          <Controls.Select
+          {/* <Controls.Select
             label="Department"
             name="departmentId"
             value={values.departmentId}
             onChange={handleInputChange}
             options={employeeService.getDepartmentCollection()}
             error={errors.departmentId}
-          />
+          /> */}
         </Grid>
         <Grid item xs={12} md={6}>
           <Controls.Input

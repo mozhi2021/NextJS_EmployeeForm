@@ -6,10 +6,12 @@ let theme = createTheme({
       main: '#154c79',
     },
     secondary: {
-      main: '#337ab7',
+      main:"#337ab7"
     },
     background: {
-      default: "#f5f5f5",
+      // default:"f5f5f5",
+      default:"orange",
+
     }
   },
 });

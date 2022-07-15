@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.text {
+  background-color: skyblue;
+  width: 80%;
+}
+
+.papersize {
+  width: 70%;
+}
