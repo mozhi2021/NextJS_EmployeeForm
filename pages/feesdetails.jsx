@@ -6,17 +6,17 @@ import { createTheme, Paper, Grid, Stack } from "@mui/material";
 import Controls from "../components/controls/Controls";
 import Header from "../components/header";
 import * as studentService from "../components/Services/studentService";
-import employeeService from "../components/Services/employeeService";
 import TextField from "@mui/material";
 import MenuItem from "@mui/material";
 import DetailsIcon from "@mui/icons-material/Details";
+import Fees from "../components/controls/fees";
 
 const theme = createTheme();
 const useStyles = makeStyles({
   pageContent: {
     margin: theme.spacing(15),
     padding: theme.spacing(8),
-    backgroundColor: "skyblue",
+    backgroundColor: "#eed971ff",
   },
 });
 const hostelfeeItems = [
@@ -99,7 +99,7 @@ export default function Feesdetails(props) {
         icon={<DetailsIcon fontSize="large" />}
       />
 
-      <Paper className={classes.pageContent} >
+      <Paper className={classes.pageContent}>
         {/* <Paper className="papersize"> */}
         <Form onSubmit={handleSubmit}>
           <Grid container>
@@ -136,10 +136,12 @@ export default function Feesdetails(props) {
                 error={errors.hostelfee}
               />
 
-              <Controls.Checkboxlistfee
+              {/* <Controls.Checkboxlistfee
                 values={values}
                 onChange={handleInputChange}
-              />
+              /> */}
+              {/* <Controls.Button text="Term I" /> */}
+              <Controls.Fees values={values} onChange={handleInputChange} />
             </Grid>
             <Grid container sx={{ justifyContent: "center" }}>
               <Controls.Button type="submit" text="Submit" />

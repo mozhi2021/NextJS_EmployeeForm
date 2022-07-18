@@ -30,6 +30,7 @@ const useStyles = makeStyles({
   pageContent: {
     margin: theme.spacing(4),
     padding: theme.spacing(5),
+    backgroundColor: "#fef3e2",
   },
   searchInput: {
     width: "55%",
@@ -37,6 +38,8 @@ const useStyles = makeStyles({
   newButton: {
     position: "absolute",
     left: "800px",
+    backgroundColor: "#fef3e2",
+
   },
 });
 

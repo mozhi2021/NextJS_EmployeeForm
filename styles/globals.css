@@ -21,5 +21,9 @@ a {
 }
 
 .papersize {
-  width: 70%;
+  width: 50%;
+}
+
+.headbutton {
+  background-color: #e7d889;
 }

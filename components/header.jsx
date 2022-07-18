@@ -20,7 +20,8 @@ import { useRouter as UseRouter } from "next/router";
 const theme = createTheme();
 const useStyles = makeStyles({
   appbar: {
-    backgroundColor: theme.palette.primary.light,
+    // backgroundColor: theme.palette.primary.light,
+    backgroundColor: "#ffbe7bff",
   },
 });
 
@@ -51,7 +52,7 @@ export default function Header() {
               Home
             </Button>
           </Grid>
-          <Grid>
+          <Grid >
             <Button
               variant="contained"
               onClick={redirecttocontact}

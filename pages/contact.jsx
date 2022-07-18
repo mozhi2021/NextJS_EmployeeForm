@@ -10,9 +10,11 @@ const theme = createTheme();
 const useStyles = makeStyles({
   pageContent: {
     margin: theme.spacing(1),
-    paddingLeft: "10%",
-    paddingTop: "25px",
+    paddingLeft: "20%",
+    paddingTop: "30px",
     paddingBottom: "25px",
+    // backgroundColor: theme.palette.primary.light,
+    backgroundColor: "#eed971ff",
   },
 });
 const initialFValues = {
@@ -72,6 +74,7 @@ export default function Contact() {
         icon={<ContactMailRoundedIcon fontSize="large" />}
       />
       <Paper className={classes.pageContent}>
+        {/* <Paper className={(["papersize"], [classes.pageContent])}> */}
         <Form onSubmit={handleSubmit}>
           <Grid container>
             <Grid item xs={12}>
