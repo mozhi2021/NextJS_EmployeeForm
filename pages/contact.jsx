@@ -10,11 +10,13 @@ const theme = createTheme();
 const useStyles = makeStyles({
   pageContent: {
     margin: theme.spacing(1),
-    paddingLeft: "20%",
+    paddingLeft: "10%",
+    paddingRight: "10%",
+    marginLeft: "10%",
     paddingTop: "30px",
     paddingBottom: "25px",
-    // backgroundColor: theme.palette.primary.light,
     backgroundColor: "#eed971ff",
+    width: "70%",
   },
 });
 const initialFValues = {

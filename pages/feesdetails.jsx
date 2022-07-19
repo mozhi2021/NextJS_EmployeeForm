@@ -9,7 +9,7 @@ import * as studentService from "../components/Services/studentService";
 import TextField from "@mui/material";
 import MenuItem from "@mui/material";
 import DetailsIcon from "@mui/icons-material/Details";
-import Fees from "../components/controls/fees";
+import Tabs_fees from "../components/controls/tabs_fees";
 
 const theme = createTheme();
 const useStyles = makeStyles({
@@ -17,6 +17,7 @@ const useStyles = makeStyles({
     margin: theme.spacing(15),
     padding: theme.spacing(8),
     backgroundColor: "#eed971ff",
+    width: "60%",
   },
 });
 const hostelfeeItems = [
@@ -100,7 +101,6 @@ export default function Feesdetails(props) {
       />
 
       <Paper className={classes.pageContent}>
-        {/* <Paper className="papersize"> */}
         <Form onSubmit={handleSubmit}>
           <Grid container>
             <Grid item xs={12}>
@@ -140,8 +140,10 @@ export default function Feesdetails(props) {
                 values={values}
                 onChange={handleInputChange}
               /> */}
-              {/* <Controls.Button text="Term I" /> */}
-              <Controls.Fees values={values} onChange={handleInputChange} />
+              <Controls.Tabs_fees
+                values={values}
+                onChange={handleInputChange}
+              />
             </Grid>
             <Grid container sx={{ justifyContent: "center" }}>
               <Controls.Button type="submit" text="Submit" />

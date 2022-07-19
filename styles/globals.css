@@ -15,14 +15,11 @@ a {
   box-sizing: border-box;
 }
 
-.text {
+/* .text {
   background-color: skyblue;
   width: 80%;
-}
+} */
 
-.papersize {
-  width: 50%;
-}
 
 .headbutton {
   background-color: #e7d889;
