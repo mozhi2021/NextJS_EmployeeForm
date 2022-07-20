@@ -6,10 +6,7 @@ import { createTheme, Paper, Grid, Stack } from "@mui/material";
 import Controls from "../components/controls/Controls";
 import Header from "../components/header";
 import * as studentService from "../components/Services/studentService";
-import TextField from "@mui/material";
-import MenuItem from "@mui/material";
 import DetailsIcon from "@mui/icons-material/Details";
-import Tabs_fees from "../components/controls/tabs_fees";
 
 const theme = createTheme();
 const useStyles = makeStyles({
@@ -38,6 +35,7 @@ const initialFValues = {
   termII: "",
   termIII: "",
   departmentId: "",
+  tabsfees: "",
 };
 
 export default function Feesdetails(props) {
@@ -84,12 +82,6 @@ export default function Feesdetails(props) {
       resetForm();
     }
   };
-  useEffect(() => {
-    if (recordForEdit != null)
-      setValues({
-        ...recordForEdit,
-      });
-  }, [recordForEdit]);
 
   const classes = useStyles();
 
@@ -140,10 +132,7 @@ export default function Feesdetails(props) {
                 values={values}
                 onChange={handleInputChange}
               /> */}
-              <Controls.Tabs_fees
-                values={values}
-                onChange={handleInputChange}
-              />
+              <Controls.Tabsfees />
             </Grid>
             <Grid container sx={{ justifyContent: "center" }}>
               <Controls.Button type="submit" text="Submit" />

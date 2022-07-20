@@ -9,6 +9,8 @@ import Textarea from "./Textarea";
 import Checkboxlist from "./Checkboxlist";
 import Checkboxlistfee from "./checkboxlistfee";
 import ActionButton from "./ActionButton";
+import Tabsfees from "./tabsfees";
+import Totalfee from "./totalfee";
 
 const Controls = {
   Input,
@@ -22,6 +24,8 @@ const Controls = {
   Checkboxlist,
   Checkboxlistfee,
   ActionButton,
+  Tabsfees,
+  Totalfee,
 };
 
 export default Controls;
