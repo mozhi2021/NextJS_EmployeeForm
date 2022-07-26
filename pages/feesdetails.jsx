@@ -119,20 +119,21 @@ export default function Feesdetails(props) {
                 onChange={handleInputChange}
                 error={errors.subject}
               />
-              <Controls.RadioGroup
+              {/* <Controls.RadioGroup
                 label="Hostelfee"
                 name="hostelfee"
                 value={values.hostelfee}
                 onChange={handleInputChange}
                 items={hostelfeeItems}
                 error={errors.hostelfee}
-              />
+              /> */}
 
               {/* <Controls.Checkboxlistfee
                 values={values}
                 onChange={handleInputChange}
               /> */}
               <Controls.Tabsfees />
+              {/* <Controls.Totalfee /> */}
             </Grid>
             <Grid container sx={{ justifyContent: "center" }}>
               <Controls.Button type="submit" text="Submit" />

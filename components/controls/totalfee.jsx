@@ -1,52 +1,79 @@
-import React, { Component } from "react";
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import { Box } from "@mui/material";
+import { FormControl } from "@mui/material";
+import { FormLabel } from "@mui/material";
 
 export default function Totalfee() {
-  //   constructor(props) {
-  //     super(props);
-  this.state = {
-    data: [
-      {
-        SchoolFees: "Term I",
-        Rupees: 20000,
-      },
-      {
-        SchoolFees: "Term II",
-        Rupees: 15000,
-      },
-      {
-        SchoolFees: "Term III",
-        Rupees: 15000,
-      },
-    ],
+  const [input, setInput] = React.useState({
+    TermI: "20000",
+    TermII: "15000",
+    TermIII: "15000",
+    TotalFee: "",
+  });
+
+  const [sum, setSum] = React.useState("");
+  useEffect(() => {
+    setSum(
+      parseInt(input.TermI) + parseInt(input.TermII) + parseInt(input.TermIII)
+    );
+  }, [input]);
+
+  const handleInput = function (e) {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value,
+    });
   };
-  //   }
-  return(
-  
-  const tableBody = this.state.data.map((item) => (
-    <tr key={item.firstname}>
-      <td>{item.SchoolFees}</td>
-      <td>{item.Rupees}</td>
-    </tr>
-  ));
-  const total = this.state.data.reduce(
-    (total, currentItem) => (total = total + currentItem.salary),
-    0
-  );
+
+  const Totalfee = function () {
+    const { TermI, TermII, TermIII } = input;
+    setResult(Number(TermI) + Number(TermII) + Number(TermIII));
+  };
+
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>School Fees</th>
-          <th>Rupees</th>
-        </tr>
-      </thead>
-      <tbody>{tableBody}</tbody>
-      <tfoot>
-        <tr>
-          Total:
-          {total}
-        </tr>
-      </tfoot>
-    </table>
+    <Box sx={{ width: "70%" }}>
+      <FormControl
+        component="fieldset"
+        sx={{ border: "1px groove lightgrey", p: 1 }}
+      >
+        <FormLabel component="legend">Enter the Fees</FormLabel>
+
+        <div>
+          <label>Term I</label>
+          <input
+            onChange={handleInput}
+            name="TermI"
+            id="termI"
+            label="TermI"
+            value={input.TermI}
+            type="text"
+          ></input>
+          <br />
+          <label>Term II</label>
+          <input
+            onChange={handleInput}
+            name="TermII"
+            label="TermII"
+            value={input.TermII}
+            type="text"
+          ></input>
+          <br />
+          <label>Term III </label>
+          <input
+            onChange={handleInput}
+            name="TermIII"
+            label="TermIII"
+            value={input.TermIII}
+            type="text"
+          ></input>
+          <br />
+
+          <button>Total </button>
+          {sum !== undefined && <span>{sum}</span>}
+        </div>
+      </FormControl>
+    </Box>
   );
 }
