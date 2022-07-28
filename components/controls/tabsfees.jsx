@@ -54,7 +54,7 @@ export default function Tabsfees() {
     Bookfee: "5500",
     Schoolfee: "9500",
     TermII: "15000",
-    TermIII: "15000",
+    TermIII: "13000",
     TotalFee: "",
   });
 

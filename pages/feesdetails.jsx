@@ -36,6 +36,7 @@ const initialFValues = {
   termIII: "",
   departmentId: "",
   tabsfees: "",
+  accordionClass: "",
 };
 
 export default function Feesdetails(props) {
@@ -111,14 +112,16 @@ export default function Feesdetails(props) {
                 options={studentService.getClassCollection()}
                 error={errors.departmentId}
               />
+              <Controls.Accordionclass className="accord" />
+              <Controls.Checkmarks />
 
-              <Controls.Input
+              {/* <Controls.Input
                 label="Roll No:"
                 name="rollno"
                 value={values.subject}
                 onChange={handleInputChange}
                 error={errors.subject}
-              />
+              /> */}
               {/* <Controls.RadioGroup
                 label="Hostelfee"
                 name="hostelfee"

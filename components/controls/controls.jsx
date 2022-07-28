@@ -11,6 +11,8 @@ import Checkboxlistfee from "./checkboxlistfee";
 import ActionButton from "./ActionButton";
 import Tabsfees from "./tabsfees";
 import Totalfee from "./totalfee";
+import Accordionclass from "../accordionclass";
+import Checkmarks from "../checkmarks";
 
 const Controls = {
   Input,
@@ -26,6 +28,8 @@ const Controls = {
   ActionButton,
   Tabsfees,
   Totalfee,
+  Accordionclass,
+  Checkmarks,
 };
 
 export default Controls;
