@@ -62,86 +62,78 @@ export default function Accordionclass() {
 
   return (
     <div>
-      <Accordion
-        expanded={expanded === "panel1"}
-        onChange={handleChange("panel1")}
-      >
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Grade : 9 </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            <Box sx={{ minWidth: 120 }}>
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Roll No</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={rollno}
-                  label="Roll No"
-                  onChange={numberChange}
-                  
-                >
-                  <MenuItem value={9101}>9101</MenuItem>
-                  <MenuItem value={9102}>9102</MenuItem>
-                  <MenuItem value={9103}>9103</MenuItem>
-                </Select>
-              </FormControl>
-            </Box>
-            {/* 9101
-            <br />
-            9102
-            <br />
-            9103
-            <br />
-            9104
-            <br />
-            9105{" "} */}
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion
-        expanded={expanded === "panel2"}
-        onChange={handleChange("panel2")}
-      >
-        <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Grade : 10 </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            10101
-            <br />
-            10102
-            <br />
-            10103
-            <br />
-            10104
-            <br />
-            10105{" "}
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion
-        expanded={expanded === "panel3"}
-        onChange={handleChange("panel3")}
-      >
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Grade : 11 </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            11101
-            <br />
-            11102
-            <br />
-            11103
-            <br />
-            11104
-            <br />
-            11105
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+      <FormControl fullWidth>
+        <Accordion
+          expanded={expanded === "panel1"}
+          onChange={handleChange("panel1")}
+        >
+          <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+            <Typography className="accord">Grade : 9 </Typography>
+          </AccordionSummary>
+          <AccordionDetails className="accord">
+            <Typography>
+              <Box sx={{ minWidth: 120 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Roll No</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={rollno}
+                    label="Roll No"
+                    onChange={numberChange}
+                  >
+                    <MenuItem value={9101}>9101</MenuItem>
+                    <MenuItem value={9102}>9102</MenuItem>
+                    <MenuItem value={9103}>9103</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion
+          expanded={expanded === "panel2"}
+          onChange={handleChange("panel2")}
+        >
+          <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
+            <Typography className="accord">Grade : 10 </Typography>
+          </AccordionSummary>
+          <AccordionDetails className="accord">
+            <Typography>
+              10101
+              <br />
+              10102
+              <br />
+              10103
+              <br />
+              10104
+              <br />
+              10105{" "}
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion
+          expanded={expanded === "panel3"}
+          onChange={handleChange("panel3")}
+        >
+          <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+            <Typography className="accord">Grade : 11 </Typography>
+          </AccordionSummary>
+          <AccordionDetails className="accord">
+            <Typography>
+              11101
+              <br />
+              11102
+              <br />
+              11103
+              <br />
+              11104
+              <br />
+              11105
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+      </FormControl>
     </div>
   );
 }

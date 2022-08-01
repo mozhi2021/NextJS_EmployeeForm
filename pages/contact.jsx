@@ -101,7 +101,7 @@ export default function Contact() {
                 onChange={handleInputChange}
                 error={errors.subject}
               />
-              <Controls.Textarea
+              <Controls.Textarea 
                 label="Address"
                 name="address"
                 value={values.message}

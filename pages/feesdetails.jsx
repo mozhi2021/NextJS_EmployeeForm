@@ -112,7 +112,7 @@ export default function Feesdetails(props) {
                 options={studentService.getClassCollection()}
                 error={errors.departmentId}
               />
-              <Controls.Accordionclass className="accord" />
+              <Controls.Accordionclass />
               <Controls.Checkmarks />
 
               {/* <Controls.Input
